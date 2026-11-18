@@ -53,3 +53,33 @@ Format with Prettier:
 ```bash
 npm run format
 ```
+
+## Runing Functions with Node REPL
+
+1. Navigate to the folder containing the .js file you are currently working with
+2. When in that file location run:
+
+```bash
+node
+```
+
+3. in Node's console, run:
+
+```javascript
+> let funcName = (await import(`./fileName.js?t=${Date.now()}`)).default;
+//if you update the .js file you can run
+> funcName = (await import(`./fileName.js?t=${Date.now()}`)).default;
+//which will update the cached function with the new changes to the file
+```
+
+4. You can run the imported function nomrally in the console:
+
+```javascript
+> funcName("paramenters"); //prints function return
+```
+
+5. To exit use Node's:
+
+```javascript
+> .exit
+```
