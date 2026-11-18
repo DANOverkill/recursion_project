@@ -1,0 +1,22 @@
+{
+  "name": "recursion_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch",
+    "lint": "eslint .",
+    "format": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "DANOverkill",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.14",
+    "eslint": "^10.15.0",
+    "jest": "^30.5.2",
+    "prettier": "^3.10.1"
+  }
+}
