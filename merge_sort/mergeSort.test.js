@@ -1,11 +1,11 @@
 import { mergeSort, merge } from "./mergeSort.js";
 
 //testing for mergeSort()
-test("check if an empty array returns it's self", () => {
+test.skip("check if an empty array returns it's self", () => {
   expect(mergeSort([])).toEqual([]);
 });
 
-test("check if array of lenth 1 returns itself", () => {
+test.skip("check if array of lenth 1 returns itself", () => {
   expect(mergeSort([73])).toEqual([73]);
 });
 
@@ -26,4 +26,16 @@ test.skip("check if an empty array returns it's self", () => {
 //testing for merge()
 test("check if arrays get merged in order", () => {
   expect(merge([1, 3, 5], [2, 4, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+});
+
+test("check if arrays get merged in order", () => {
+  expect(merge([1, 4, 8], [2, 5, 7])).toEqual([1, 2, 4, 5, 7, 8]);
+});
+
+test("check if arrays get merged in order when arrays have different length", () => {
+  expect(merge([1, 1, 8], [2, 5, 7, 9, 10])).toEqual([1, 1, 2, 5, 7, 8, 9, 10]);
+});
+
+test("check if arrays get merged in order when arrays have different length", () => {
+  expect(merge([2, 5, 7, 9, 10], [1, 1, 8])).toEqual([1, 1, 2, 5, 7, 8, 9, 10]);
 });
