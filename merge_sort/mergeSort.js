@@ -22,7 +22,7 @@ function merge(arr1, arr2) {
       j++;
     }
   }
-  console.log(returnArr);
+
   return returnArr;
 }
 function mergeSort() {
