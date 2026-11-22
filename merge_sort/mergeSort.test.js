@@ -39,3 +39,15 @@ test("check if arrays get merged in order when arrays have different length", ()
 test("check if arrays get merged in order when arrays have different length", () => {
   expect(merge([2, 5, 7, 9, 10], [1, 1, 8])).toEqual([1, 1, 2, 5, 7, 8, 9, 10]);
 });
+
+test("check if two empty arrways return a single empty array", () => {
+  expect(merge([], [])).toEqual([]);
+});
+
+test("check the second array is empty if the function returns the first array", () => {
+  expect(merge([1, 4], [])).toEqual([1, 4]);
+});
+
+test("check the first array is empty if the function returns the second array", () => {
+  expect(merge([], [5, 3])).toEqual([5, 3]);
+});
