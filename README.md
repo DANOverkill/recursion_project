@@ -75,14 +75,10 @@ node
 If using named exports (`export`), run:
 
 ```javascript
-> let { funcName1, funcName2 } = await import(
-  `./fileName.js?t=${Date.now()}`
-);
+> let { funcName1, funcName2 } = await import(`./fileName.js?t=${Date.now()}`);
 
 // If you update the .js file, run this to reload the functions:
-> ({ funcName1, funcName2 } = await import(
-  `./fileName.js?t=${Date.now()}`
-));
+> ({ funcName1, funcName2 } = await import(`./fileName.js?t=${Date.now()}`));
 ```
 
 4. You can run the imported functions normally in the console:
