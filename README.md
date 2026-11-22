@@ -63,22 +63,35 @@ npm run format
 node
 ```
 
-3. in Node's console, run:
+3. In Node's console, if using `export default`, run:
 
 ```javascript
 > let funcName = (await import(`./fileName.js?t=${Date.now()}`)).default;
-//if you update the .js file you can run
+
+// If you update the .js file, run this again to load the latest version:
 > funcName = (await import(`./fileName.js?t=${Date.now()}`)).default;
-//which will update the cached function with the new changes to the file
 ```
 
-4. You can run the imported function nomrally in the console:
+If using named exports (`export`), run:
 
 ```javascript
-> funcName("paramenters"); //prints function return
+> let { funcName1, funcName2 } = await import(
+  `./fileName.js?t=${Date.now()}`
+);
+
+// If you update the .js file, run this to reload the functions:
+> ({ funcName1, funcName2 } = await import(
+  `./fileName.js?t=${Date.now()}`
+));
 ```
 
-5. To exit use Node's:
+4. You can run the imported functions normally in the console:
+
+```javascript
+> funcName("parameters"); // Prints the function's return value
+```
+
+5. To exit, use Node's:
 
 ```javascript
 > .exit
